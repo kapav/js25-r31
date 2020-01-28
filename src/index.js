@@ -2,5 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import HomePage from './home-page';
+import {BrowserRouter} from 'react-router-dom'
 
-ReactDOM.render(<HomePage />, document.getElementById('root'));
+const homePage = (
+  <BrowserRouter>
+    <HomePage />
+  </BrowserRouter>
+)
+
+ReactDOM.render(homePage, document.getElementById('root'));
