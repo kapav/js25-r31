@@ -31,6 +31,7 @@ class Drawer extends Component {
     const links = [
       {to: '/', label: 'Список', exact: true}
     ]
+    console.log('drawer this.props.isAuthenticated', this.props.isAuthenticated);
     if (this.props.isAuthenticated) {
       links.push({to: '/quiz-creator', label: 'Создать опрос', exact: false})
       links.push({to: '/logout', label: 'Выйти', exact: false})

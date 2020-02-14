@@ -11,7 +11,7 @@ import { autoLogin } from '../store/actions/auth'
 
 class HomePage extends Component {
   componentDidMount() {
-    //this.props.autoLogin()
+    this.props.autoLogin()
   }
 
   render() {
@@ -19,7 +19,7 @@ class HomePage extends Component {
       <Switch>
         <Route path="/auth" component={Auth} />
         <Route path="/quiz/:id" component={Quiz} />
-        <Route path="/" component={QuizList} />
+        <Route path="/" exact component={QuizList} />
         <Redirect to="/" />
       </Switch>
     )
@@ -29,8 +29,8 @@ class HomePage extends Component {
         <Switch>
           <Route path="/quiz-creator" component={QuizCreator} />
           <Route path="/quiz/:id" component={Quiz} />
-          <Route path="/" component={QuizList} />
           <Route path="/logout" component={Logout} />
+          <Route path="/" exact component={QuizList} />
           <Redirect to="/" />
        </Switch>
       )
